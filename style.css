@@ -38,25 +38,72 @@ body {
   transform: rotateY(0deg) translateZ(250px);
   background: #ed1c24;
 }
+.a:before {
+  content: "A is the first letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
 .b {
   transform: rotateY(60deg) translateZ(250px);
   background: #0072bc;
 }
+.b:before {
+  content: "B is the second letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
 .c {
   transform: rotateY(120deg) translateZ(250px);
   background: #39b54a;
 }
+.c:before {
+  content: "C is the third letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
 .d {
   transform: rotateY(180deg) translateZ(250px);
   background: #f26522;
 }
+.d:before {
+  content: "D is the fourth letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
 .e {
   transform: rotateY(240deg) translateZ(250px);
   background: #630460;
-} 
+}
+.e:before {
+  content: "E is the fifth letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
 .f {
   transform: rotateY(300deg) translateZ(250px);
   background: #8c6239;
+}
+.f:before {
+  content: "F is the sixth letter of the alphabet etc...";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
 }
 
 .next, .prev {
