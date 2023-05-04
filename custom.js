@@ -1,40 +1,37 @@
-const sliderFrame = document.querySelector(".slider__frame");
-const sliderControls = document.querySelectorAll(".slider__control");
-const caseStudies = document.querySelectorAll(".case-study");
+const slider = document.querySelector('.slider');
+const slides = slider.querySelectorAll('.case-study');
+const sliderNav = document.querySelector('.slider-nav');
+const sliderNavItems = sliderNav.querySelectorAll('.slider-nav-item');
+const sliderWidth = slider.offsetWidth;
 
-let currentSlide = 1;
+let currentIndex = 1;
+let prevIndex = 1;
 
-// Helper function to update the slider position based on the current slide
-function updateSliderPosition() {
-  sliderFrame.style.transform = `translateX(-${(currentSlide - 1) * 100}%)`;
+function moveToSlide(index) {
+  if (index === currentIndex) {
+    return;
+  }
+  
+  const direction = index > currentIndex ? 'right' : 'left';
+  const offset = sliderWidth * (index - 1);
+
+  slides[prevIndex - 1].classList.remove('active');
+  slides[index - 1].classList.add('active');
+  
+  slider.style.transform = `translateX(-${offset}px)`;
+  
+  sliderNavItems[prevIndex - 1].classList.remove('active');
+  sliderNavItems[index - 1].classList.add('active');
+  
+  prevIndex = currentIndex;
+  currentIndex = index;
 }
 
-// Helper function to update the active case study
-function updateActiveCaseStudy() {
-  caseStudies.forEach((study, index) => {
-    if (index === currentSlide - 1) {
-      study.classList.add("active");
-    } else {
-      study.classList.remove("active");
-    }
-  });
+function handleNavItemClick(e) {
+  const targetIndex = Number(e.target.dataset.index);
+  moveToSlide(targetIndex);
 }
 
-// Add event listeners to slider controls
-sliderControls.forEach((control) => {
-  control.addEventListener("click", () => {
-    if (control.classList.contains("slider__control--left")) {
-      // Move to the previous slide
-      currentSlide = Math.max(currentSlide - 1, 1);
-    } else {
-      // Move to the next slide
-      currentSlide = Math.min(currentSlide + 1, 3);
-    }
-    updateSliderPosition();
-    updateActiveCaseStudy();
-  });
+sliderNavItems.forEach(item => {
+  item.addEventListener('click', handleNavItemClick);
 });
-
-// Initialize the slider
-updateSliderPosition();
-updateActiveCaseStudy();
