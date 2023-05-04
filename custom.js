@@ -1,37 +1,38 @@
-const slider = document.querySelector('.slider');
-const slides = slider.querySelectorAll('.case-study');
-const sliderNav = document.querySelector('.slider-nav');
-const sliderNavItems = sliderNav.querySelectorAll('.slider-nav-item');
-const sliderWidth = slider.offsetWidth;
+const carousel = document.querySelector('.carousel');
+const carouselItems = document.querySelectorAll('.carousel-item');
+const circleContainer = document.querySelector('.carousel-circle');
+const circles = document.querySelectorAll('.carousel-circle div');
 
-let currentIndex = 1;
-let prevIndex = 1;
+let currentSlide = 1;
 
-function moveToSlide(index) {
-  if (index === currentIndex) {
-    return;
+function moveToSlide(slide) {
+  carousel.style.transform = `translateX(-${slide - 1}00%)`;
+  currentSlide = slide;
+  updateCircles();
+}
+
+function updateCircles() {
+  circles.forEach((circle, index) => {
+    if (index + 1 === currentSlide) {
+      circle.classList.add('active');
+    } else {
+      circle.classList.remove('active');
+    }
+  });
+}
+
+circles.forEach((circle, index) => {
+  circle.addEventListener('click', () => {
+    moveToSlide(index + 1);
+  });
+});
+
+moveToSlide(currentSlide);
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    moveToSlide(currentSlide - 1);
+  } else if (event.key === 'ArrowRight') {
+    moveToSlide(currentSlide + 1);
   }
-  
-  const direction = index > currentIndex ? 'right' : 'left';
-  const offset = sliderWidth * (index - 1);
-
-  slides[prevIndex - 1].classList.remove('active');
-  slides[index - 1].classList.add('active');
-  
-  slider.style.transform = `translateX(-${offset}px)`;
-  
-  sliderNavItems[prevIndex - 1].classList.remove('active');
-  sliderNavItems[index - 1].classList.add('active');
-  
-  prevIndex = currentIndex;
-  currentIndex = index;
-}
-
-function handleNavItemClick(e) {
-  const targetIndex = Number(e.target.dataset.index);
-  moveToSlide(targetIndex);
-}
-
-sliderNavItems.forEach(item => {
-  item.addEventListener('click', handleNavItemClick);
 });
