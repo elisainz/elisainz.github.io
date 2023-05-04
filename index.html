@@ -1,43 +1,31 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-</head>
-<body>
-  <div class="carousel">
-    <div class="carousel-item">
-      <div class="case-study">
-        <div class="case-study-number">1</div>
-        <div class="case-study-color" style="background-color: #ff0000;"></div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carousel Example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <div class="case-study-color">1</div>
+          <div class="case-study-info">Case Study 1 Info</div>
+        </div>
+        <div class="carousel-item">
+          <div class="case-study-color">2</div>
+          <div class="case-study-info">Case Study 2 Info</div>
+        </div>
+        <div class="carousel-item">
+          <div class="case-study-color">3</div>
+          <div class="case-study-info">Case Study 3 Info</div>
+        </div>
       </div>
-      <div class="case-study-info">
-        <h2>Case Study 1</h2>
-        <p>Details about case study 1</p>
-      </div>
-    </div>
-    <div class="carousel-item active">
-      <div class="case-study">
-        <div class="case-study-number">2</div>
-        <div class="case-study-color" style="background-color: #00ff00;"></div>
-      </div>
-      <div class="case-study-info">
-        <h2>Case Study 2</h2>
-        <p>Details about case study 2</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="case-study">
-        <div class="case-study-number">3</div>
-        <div class="case-study-color" style="background-color: #0000ff;"></div>
-      </div>
-      <div class="case-study-info">
-        <h2>Case Study 3</h2>
-        <p>Details about case study 3</p>
+      <div class="carousel-nav">
+        <button class="prev-btn">Prev</button>
+        <button class="next-btn">Next</button>
       </div>
     </div>
-  </div>
-
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script type="text/javascript" src="custom.js"></script>
-</body>
+    <script src="custom.js"></script>
+  </body>
+</html>
