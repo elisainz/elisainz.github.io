@@ -1,66 +1,84 @@
+body {
+	margin: 0;
+	font-family: 'Roboto';
+	font-size: 16px;
+	
+	display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+// Carousel configuration parameters
+$n: 8;
+$item-width: 400px;
+$item-separation: 80px;
+$viewer-distance: 500px;
+
+// Derived variables
+$theta: 2 * 3.141592653589793 / $n; 
+$apothem: 482.842712474619px;
+
 .carousel {
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
-margin: 0 auto;
-width: 80%;
-height: 400px;
-}
+	padding: 20px;
 
-.carousel-items {
-display: flex;
-width: calc(100% * 3);
-transition: transform 0.5s ease;
-}
-
-.carousel-item {
-flex: 1;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: calc(100% / 3);
-height: 100%;
-border: 2px solid #ddd;
-box-shadow: 0px 0px 10px #ddd;
-font-family: sans-serif;
-}
-
-.case-study {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 80px;
-height: 80px;
-border-radius: 50%;
-margin-bottom: 20px;
-}
-
-.case-study-number {
-font-size: 24px;
-font-weight: bold;
-color: #ffffff;
-}
-
-.case-study-color {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-}
-
-.case-study-info {
-display: none;
-text-align: center;
-margin-top: 20px;
-font-family: sans-serif;
-}
-
-.case-study-info h2,
-.case-study-info p {
-font-size: 16px;
-}
-
-.carousel-item.active .case-study-info {
-display: block;
+	perspective: $viewer-distance;
+	overflow: hidden;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	> * {
+		flex: 0 0 auto;
+	}
+	
+	figure {
+		margin: 0;
+		
+		width: $item-width;
+		transform-style: preserve-3d;
+		transition: transform 0.5s;
+		transform-origin: 50% 50% (-$apothem);
+		
+		img {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0 $item-separation / 2;
+			
+			opacity: 0.9;
+			
+			&:not(:first-of-type) {
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform-origin: 50% 50% (-$apothem);
+			}
+			
+			@for $i from 2 through $n {
+				&:nth-child(#{$i}) {
+					transform: rotateY(#{($i - 1) * $theta}rad);
+				}
+			}
+		}
+	}
+	
+	nav {
+		display: flex;
+		justify-content: center;
+		margin: 20px 0 0;
+		
+		button {
+			flex: 0 0 auto;
+			margin: 0 5px;
+			
+			cursor: pointer;
+			
+			color: #333;
+			background: none;
+			border: 1px solid;
+			letter-spacing: 1px;
+			padding: 5px 10px;
+		}
+	}
+	
 }
