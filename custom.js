@@ -1,38 +1,25 @@
-const carousel = document.querySelector('.carousel');
-const carouselItems = document.querySelectorAll('.carousel-item');
-const circleContainer = document.querySelector('.carousel-circle');
-const circles = document.querySelectorAll('.carousel-circle div');
-
-let currentSlide = 1;
-
-function moveToSlide(slide) {
-  carousel.style.transform = `translateX(-${slide - 1}00%)`;
-  currentSlide = slide;
-  updateCircles();
-}
-
-function updateCircles() {
-  circles.forEach((circle, index) => {
-    if (index + 1 === currentSlide) {
-      circle.classList.add('active');
-    } else {
-      circle.classList.remove('active');
-    }
+$(document).ready(function(){
+  $('.carousel').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    initialSlide: 1,
+    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+    nextArrow: '<button type="button" class="slick-next">Next</button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          slidesToShow: 1,
+          variableWidth: true
+        }
+      }
+    ]
   });
-}
-
-circles.forEach((circle, index) => {
-  circle.addEventListener('click', () => {
-    moveToSlide(index + 1);
-  });
-});
-
-moveToSlide(currentSlide);
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'ArrowLeft') {
-    moveToSlide(currentSlide - 1);
-  } else if (event.key === 'ArrowRight') {
-    moveToSlide(currentSlide + 1);
-  }
 });
