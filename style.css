@@ -1,41 +1,134 @@
 body {
-	font-family: 'Helvetica Neue', sans-serif;
-	background-color: #f7f7f7;
-	color: #333;
-	margin: 0;
-	padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-	background-color: #2c3e50;
-	color: #fff;
-	padding: 40px 20px;
-	text-align: center;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 h1 {
-	font-size: 48px;
-	margin: 0;
+  font-size: 48px;
+  margin: 0;
 }
 
 .container {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 40px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .case-study {
-	background-color: #fff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .case-study h2 {
-	font-size: 24px;
-	margin-top: 0;
+  font-size: 24px;
+  margin-top: 0;
 }
 
 .case-study p {
-	margin-bottom: 0;
+  margin-bottom: 0;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.slider__control {
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.slider__control--left {
+  left: 20px;
+}
+
+.slider__control--right {
+  right: 20px;
+}
+
+.slider__viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.slider__frame {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease;
+  transform: translateX(-33.33%);
+}
+
+.slider__frame--1 {
+  transform: translateX(0);
+}
+
+.slider__frame--2 {
+  transform: translateX(-33.33%);
+}
+
+.slider__frame--3 {
+  transform: translateX(-66.66%);
+}
+
+.slider__frame .case-study {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.slider__wheel {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2c3e50;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.slider__wheel--left {
+  left: 0;
+}
+
+.slider__wheel--right {
+  right: 0;
+}
+
+.slider__wheel--1 {
+  transform: translateX(-33.33%);
+}
+
+.slider__wheel--2 {
+  transform: translateX(0);
+}
+
+.slider__wheel--3 {
+  transform: translateX(33.33%);
+}
+
+.slider__wheel__text {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin-top: 7px;
 }
