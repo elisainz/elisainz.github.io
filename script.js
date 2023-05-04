@@ -1,20 +1,19 @@
-var carousel = $(".carousel"),
-    currdeg  = 0;
+$(document).ready(function() {
 
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
+  var carousel = $(".carousel");
+  var currdeg = 0;
 
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
+  $(".next").on("click", { d: "n" }, rotate);
+  $(".prev").on("click", { d: "p" }, rotate);
+
+  function rotate(e) {
+    if (e.data.d == "n") {
+      currdeg -= 60;
+    }
+    if (e.data.d == "p") {
+      currdeg += 60;
+    }
+    carousel.css("transform", "rotateY(" + currdeg + "deg)");
   }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
+
+});
