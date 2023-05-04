@@ -3,33 +3,34 @@
 <head>
 	<title>Elizabeth's UX Case Studies</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="custom.js"></script>
 </head>
 <body>
 	<header>
 		<h1>Hi! I'm Elizabeth, a UX Designer based in Madrid</h1>
 	</header>
 	<div class="container">
-		<div class="slider">
-			<div class="slider__control slider__control--left">Case Study 1</div>
-			<div class="slider__viewport">
-				<div class="slider__frame">
-					<div class="case-study">
-						<h2>Case Study 1: Improving User Onboarding</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
-					</div>
-					<div class="case-study">
-						<h2>Case Study 2: Redesigning the Checkout Experience</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
-					</div>
-					<div class="case-study">
-						<h2>Case Study 3: Creating an Intuitive Mobile App</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
-					</div>
+		<div class="slider-container">
+			<div class="slider">
+				<div class="case-study">
+					<h2>Case Study 1: Improving User Onboarding</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
+				</div>
+				<div class="case-study active">
+					<h2>Case Study 2: Redesigning the Checkout Experience</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
+				</div>
+				<div class="case-study">
+					<h2>Case Study 3: Creating an Intuitive Mobile App</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac massa vel enim viverra tincidunt. Proin nec lectus nec mauris finibus eleifend.</p>
 				</div>
 			</div>
-			<div class="slider__control slider__control--right">Case Study 3</div>
+			<div class="slider-nav">
+				<div class="slider-nav-item active" data-index="1">Case Study 1</div>
+				<div class="slider-nav-item" data-index="2">Case Study 2</div>
+				<div class="slider-nav-item" data-index="3">Case Study 3</div>
+			</div>
 		</div>
 	</div>
-	<script src="script.js"></script>
 </body>
 </html>
