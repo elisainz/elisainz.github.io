@@ -24,7 +24,7 @@ width: calc(100% / 3);
 height: 100%;
 border: 2px solid #ddd;
 box-shadow: 0px 0px 10px #ddd;
-font-family: Arial, sans-serif;
+font-family: sans-serif;
 }
 
 .case-study {
@@ -53,7 +53,7 @@ border-radius: 50%;
 display: none;
 text-align: center;
 margin-top: 20px;
-font-family: Arial, sans-serif;
+font-family: sans-serif;
 }
 
 .case-study-info h2,
