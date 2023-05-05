@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Carousel</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+	<title>3D Rotating Carousel Examples</title>
+	<link rel="stylesheet" type="text/css" href="style.scss">
+	<script type="text/javascript" src="script.ts"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="carousel">
-      <div class="item a">
-        <div class="item-info">A is the first letter of the alphabet.</div>
-        A
-      </div>
-      <div class="item b">
-        <div class="item-info">B is the second letter of the alphabet.</div>
-        B
-      </div>
-      <div class="item c">
-        <div class="item-info">C is the third letter of the alphabet.</div>
-        C
-      </div>
-      <div class="item d">
-        <div class="item-info">D is the fourth letter of the alphabet.</div>
-        D
-      </div>
-      <div class="item e">
-        <div class="item-info">E is the fifth letter of the alphabet.</div>
-        E
-      </div>
-      <div class="item f">
-        <div class="item-info">F is the sixth letter of the alphabet.</div>
-        F
-      </div>
-    </div>
-  </div>
-  <div class="next">Next</div>
-  <div class="prev">Prev</div>
-</body>
+	<h1>3D Rotating Carousel Examples</h1>
+
+	<h2>Eight images, with 20px gap</h2>
+	<div class="carousel" data-gap="20">
+		<figure>
+			<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+			<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+			<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+			<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+			<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+			<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+			<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+			<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+		</figure>
+		<nav>
+			<button class="nav prev">Prev</button>
+			<button class="nav next">Next</button>
+		</nav>
+	</div>
+
+	<h2>Eight images, with 80px gap</h2>
+	<div class="carousel" data-gap="80">
+		<figure>
+			<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+			<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+			<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+			<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+			<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+			<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+			<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+			<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+		</figure>
+		<nav>
+			<button class="nav prev">Prev</button>
+			<button class="nav next">Next</button>
+		</nav>
+	</div>
+
+<h2>Hidden backfaces</h2>
+<div class="carousel" data-gap="20" data-bfc>
+	<figure>
+    <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
+		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+	</figure>
+	<nav>
+		<button class="nav prev">Prev</button>
+		<button class="nav next">Next</button>
+	</nav>
+</div>
+  </body>
 </html>
