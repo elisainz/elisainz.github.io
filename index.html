@@ -1,104 +1,36 @@
 <head>
   <link rel="stylesheet" href="style.scss">
- <script src="script.js"></script>
+ <script src="script.ts"></script>
 </head>
-<h1>3D Rotating Carousel Examples</h1>
-
-<h2>Three images</h2>
 <div class="carousel">
-	<figure>
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
-</div>
-
-<h2>Four images</h2>
-<div class="carousel">
-	<figure>
-    <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
-</div>
-
-<h2>Eight images</h2>
-<div class="carousel">
-	<figure>
-    <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
-		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
-		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
-		<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
-		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
-</div>
-
-<h2>Eight images, with 20px gap</h2>
-<div class="carousel" data-gap="20">
-	<figure>
-    <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
-		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
-		<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
-		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
-</div>
-
-<h2>Eight images, with 80px gap</h2>
-<div class="carousel" data-gap="80">
-	<figure>
-    <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
-		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
-		<img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
-		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
-</div>
-
-<h2>Hidden backfaces</h2>
-<div class="carousel" data-gap="20" data-bfc>
-	<figure>
-    <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
-		<img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="">
-		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
-		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
-		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
-		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
-	</figure>
-	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
-	</nav>
+  <div class="slides">
+    <img
+      src="https://i.loli.net/2020/01/20/2wx8npJFiDUzu4T.png"
+      alt="Stainless Steel"
+    />
+    <img
+      src="https://i.loli.net/2020/01/20/YWA6RhCcESgN3Ty.png"
+      alt="Army Green"
+    />
+    <img
+      src="https://i.loli.net/2020/01/19/4HaLyI7NQRf3teO.png"
+      alt="Cranberry"
+    />
+    <img
+      src="https://i.loli.net/2020/01/19/QVY6JSEbqiOvAp1.png"
+      alt="Midnight Blue"
+    />
+  </div>
+  <div class="overlays">
+    <div class="bar" style="--bar-color: #bdc3c7;"></div>
+    <div class="bar" style="--bar-color: #218c74;"></div>
+    <div class="bar" style="--bar-color: #dd6b7b;"></div>
+    <div class="bar" style="--bar-color: #30465c;"></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" class="nav-link">Stainless Steel</a></li>
+    <li><a href="#" class="nav-link">Army Green</a></li>
+    <li><a href="#" class="nav-link">Cranberry</a></li>
+    <li><a href="#" class="nav-link">Midnight Blue</a></li>
+  </ul>
 </div>
